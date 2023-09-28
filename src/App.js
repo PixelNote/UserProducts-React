@@ -1,12 +1,26 @@
 import './App.css';
-import User from './User';
-import Products from './Products';
+import Products from "./components/Products";
+import Product from "./components/Product";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
+import { Routes, Route } from "react-router-dom";
+
+
 
 function App() {
   return (
     <div className="App">
-      <User/>
-      <Products/>
+      <Routes>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path="/" element=
+          { 
+          [<NavBar />,
+           <Products />
+          ]}
+        />
+        <Route exact path='/products/:id' element={<Product/>}/>
+        
+      </Routes>
     </div>
   );
 }

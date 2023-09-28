@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import './User.css';
 
-function User(){
+export default function User(){
 
   const [user, setUser] = useState(null)
 
@@ -9,7 +9,6 @@ function User(){
     fetch("https://fakestoreapi.com/users/2")
       .then((res) => res.json())
       .then((data) => {
-      console.log(data);
       setUser(data);
   })
   }, [])
@@ -29,7 +28,3 @@ function User(){
 
 }
   
-
-
-export default User;
-
