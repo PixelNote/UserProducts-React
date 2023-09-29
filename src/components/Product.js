@@ -15,7 +15,7 @@ export default function Product() {
    }, []);
 
    const addToCart = () => {
-     if (typeof window !== "undefined" && window.localStorage) {
+     if (window.localStorage) {
        const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
        currentCart.push(product);
        localStorage.setItem("cart", JSON.stringify(currentCart));
