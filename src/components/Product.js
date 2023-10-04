@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import "./Products.css";
 import NavBar from "./NavBar";
 
 export default function Product() {
@@ -25,14 +24,14 @@ export default function Product() {
    return (
      <>
       <NavBar/>
-       <div className="product-main">
+       <div className="product-m">
          {product ? (
-           <div className="product">
-             <p className="product-title">{product.title}</p>
+           <div className="m-product">
+             <p className="m-title">{product.title}</p>
              <img src={product.image} alt={"producto" + product.id} />
-             <p className="product-description">{product.description}</p>
+             <p className="m-description">{product.description}</p>
              <Link to={"/"}>
-               <button onClick={addToCart} className="product-add">
+               <button onClick={addToCart} className="m-add">
                  Añadir al carrito
                </button>
              </Link>

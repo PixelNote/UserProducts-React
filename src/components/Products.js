@@ -23,21 +23,22 @@ export default function Products(){
       <div className="products">
         {products.map((product) => (
           <div className="product">
-            <p className="product-title">{product.title}</p>
             <Link to={`products/${product.id}`}>
-            <div className="image-container">
-              <img src={product.image} alt={"producto" + product.id} />
-              <div className="overlay">
-                <p>
-                  VER MÁS
-                </p>
+              <div className="image-container">
+                <img src={product.image} alt={"producto" + product.id} />
+                <div className="overlay">
+                  <p>VER MÁS</p>
+                </div>
               </div>
-            </div>
             </Link>
-            <p className="product-price">
-              <span className="price-symbol">$</span> {product.price}{" "}
-              <span className="price-usd">USD</span>
-            </p>
+            <div className="product-content">
+              <p className="product-title">{product.title}</p>
+              <p className="product-category">Categoría: <span className="category-title">{product.category}</span></p>
+              <p className="product-price">
+                <span className="price-symbol">$</span> {product.price}{" "}
+                <span className="price-usd">USD</span>
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body{
+  background-color: rgb(211, 217, 228);
+}
 
 .App {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-image: linear-gradient(to right bottom, #f9ebff, #f3e9ff, #ede7ff, #e6e6ff, #dee4ff, #d7e6ff, #d1e8ff, #cbeaff, #c8f0ff, #c6f5ff, #c6fafe, #c9fffb);
+  background-color: rgb(211, 217, 228);
 }
