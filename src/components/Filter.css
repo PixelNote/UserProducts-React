@@ -36,22 +36,3 @@ li input[type="checkbox"]{
   outline: none;
   border: none;
 }
-
-/* Estilo del li cuando el input está marcado */
-.item.checked {
-  color: red;
-  /* Cambia el color del texto del li */
-  font-weight: bold;
-  /* Cambia el estilo del texto del li */
-}
-
-/* Estilo del label y el span dentro del li cuando el input está marcado */
-.item.checked label {
-  color: green;
-  /* Cambia el color del texto del label */
-}
-
-.item.checked span {
-  color: blue;
-  /* Cambia el color del texto del span dentro del label */
-}
