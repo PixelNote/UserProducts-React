@@ -1,27 +1,59 @@
-import { useState, useEffect } from "react";
+import { useEffect, useReducer } from "react";
 import './Products.css';
 import { Link } from "react-router-dom";
+import { actions, initialState, productReducer } from "./productReducer";
+import { useProducts } from "./context";
 
 export default function Products(){
 
-  const [products, setProducts] = useState([])
+  const [state, dispatch] = useReducer(productReducer, initialState);
+  const { products, error } = state;
+  const { actualCat , setActualCat } = useProducts();
 
-
+  useEffect(() => {
+    const storedCategory = localStorage.getItem("actualCat");
+    if (storedCategory) {
+      setActualCat([{ id: 1, text: storedCategory, checked: true }]);
+    } else {
+      setActualCat([{ id: 1, text: "All", checked: true }]);
+    }
+  }, [setActualCat]);
+  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
+        dispatch({type: actions.FETCH_PRODUCT_SUCCESS, payload: data})
+      })
+      .catch((e) => {
+        dispatch({type: actions.FETCH_PRODUCT_FAIL, payload: e.message})
       });
+
   }, []);
 
-  
+  useEffect(() => {
+    if (actualCat && actualCat.length > 0) {
+      localStorage.setItem("actualCat", actualCat[0].text);
+    }
+  }, [actualCat]);
+
+  const selectedCategory =
+    actualCat && actualCat.length > 0 ? actualCat[0].text : "All";
+
+  const filteredProducts =
+    selectedCategory === "All"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+
+  console.log(filteredProducts)
+  console.log("actualCat:", actualCat);
 
 
   return (
     <>
       <div className="products">
-        {products.map((product) => (
+        {error && <div>{error}</div>}
+        {filteredProducts.map((product) => (
           <div className="product">
             <Link to={`products/${product.id}`}>
               <div className="image-container">

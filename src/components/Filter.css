@@ -1,0 +1,57 @@
+.categories{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.categories ul{
+  display: flex;
+  flex-direction: row;
+}
+.categories label{
+  text-align: center;
+}
+
+.categories span{
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.categories li{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  background-color: rgb(128, 128, 196);
+  margin: 5px 15px 5px 15px;
+  list-style-type: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+li input[type="checkbox"]{
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+}
+
+/* Estilo del li cuando el input está marcado */
+.item.checked {
+  color: red;
+  /* Cambia el color del texto del li */
+  font-weight: bold;
+  /* Cambia el estilo del texto del li */
+}
+
+/* Estilo del label y el span dentro del li cuando el input está marcado */
+.item.checked label {
+  color: green;
+  /* Cambia el color del texto del label */
+}
+
+.item.checked span {
+  color: blue;
+  /* Cambia el color del texto del span dentro del label */
+}

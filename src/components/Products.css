@@ -65,8 +65,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   background-color: rgba(114, 114, 114, 0.7);
   display: flex;
   justify-content: center;
@@ -87,7 +87,8 @@
 
 .overlay p {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -102,22 +103,4 @@
 .price-usd{
   font-size: 14px;
   color: rgb(68, 68, 68);
-}
-
-button{
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  width: 150px;
-  height: 40px;
-  margin: 50px 0 50px 0;
-  background-color: rgb(170, 170, 204);
-  color: rgb(44, 44, 44);
-  border: 0.5px solid white;
-  border-radius: 5px;
-}
-
-button:hover{
-  background-color: rgb(46, 46, 216);
-  color: white;
 }

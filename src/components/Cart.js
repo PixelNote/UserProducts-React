@@ -11,14 +11,17 @@ export default function Cart(){
       <div className="products">
         {items.map((product) => (
           <div className="product">
-            <p className="product-title">{product.title}</p>
-            <div className="image-container">
+          <div className="image-container">
               <img src={product.image} alt={"producto" + product.id} />
             </div>
+          <div className='product-content'>
+            <p className="product-title">{product.title}</p>
+            
             <p className="product-price">
               <span className="price-symbol">$</span> {product.price}{" "}
               <span className="price-usd">USD</span>
             </p>
+          </div>
           </div>
         ))}
       </div>
